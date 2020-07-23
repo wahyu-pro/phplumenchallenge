@@ -72,7 +72,10 @@ class PostController extends Controller
     public function findById(Request $request)
     {
         $id = $request->route('id');
-        $post = Post::find($id);
+        // $post = Post::find($id);
+        $post = Post::where('id', $id)->with(array('author' => function($query){
+            $query->select();
+        }))->get();
         if (!$post) {
             return "not post";
         }
