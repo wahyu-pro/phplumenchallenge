@@ -233,6 +233,10 @@ use Illuminate\Http\Request;
 
 $router->group(['prefix' => 'api'], function () use ($router) {
 
+    $router->get('/', function () use ($router) {
+        return "Selamat di datang Lumen Api Wahyu Wibowo";
+    });
+
     // Author
     $router->get('author/{id}', 'AuthorController@findById');
     // $router->get('authorjoin', 'AuthorController@getPostAndComment');
