@@ -229,7 +229,7 @@ use Illuminate\Http\Request;
 
 // $router->post('auth', 'AuthController@valid');
 
-// $router->group(['middleware' => 'auth'], function () use ($router) {
+$router->group(['middleware' => 'auth'], function () use ($router) {
 
 $router->group(['prefix' => 'api'], function () use ($router) {
 
@@ -264,4 +264,4 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->delete('comment/{id}', 'CommentController@delete');
     // end comment
 });
-// });
+});
