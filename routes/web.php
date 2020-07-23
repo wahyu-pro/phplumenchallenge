@@ -227,7 +227,7 @@ use Illuminate\Http\Request;
 // $router->get('comment/{age}', ['middleware' => 'agehecker:age', 'uses' =>  'CommentController@index']);
 // $router->post('comment', 'CommentController@create');
 
-// $router->post('auth', 'AuthController@valid');
+$router->post('auth', 'AuthController@valid');
 
 $router->group(['middleware' => 'auth'], function () use ($router) {
 
